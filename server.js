@@ -59,7 +59,7 @@ async function handleDownload(req, res) {
   file.downloadCount++;
   await file.save();
 
-  res.download(file.path, file.originalName);
+  res.download(file.path, file.name);
 }
 
 app.listen(process.env.PORT);
