@@ -13,6 +13,7 @@
       <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
     </div>
   <% } %>
+  <!-- when uploading files in form, use enctype = "multipart/form-data"  -->
   <form action="/upload" method="post" style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;" enctype="multipart/form-data">
     <label for="file">File:</label>
     <input type="file" id="file" name="file" required />
