@@ -4,22 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="/style.css" rel="stylesheet">  
+
   <title>Document</title>
 </head>
 <body>
+
+  <h1>
+    Share File Securely
+  </h1>
+
   <% if (locals.fileLink != null) { %>
-    <div style="margin-bottom: 1rem;">
-      Your file is upload
-      <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+    <div class="alert alert-primary" role="alert">
+      Your file is uploaded here: <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
     </div>
   <% } %>
   <!-- when uploading files in form, use enctype = "multipart/form-data"  -->
-  <form action="/upload" method="post" style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;" enctype="multipart/form-data">
-    <label for="file">File:</label>
-    <input type="file" id="file" name="file" required />
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" />
-    <button style="grid-column: span 2;" type="submit">Share</button>
+  <form action="/upload" method="post"  enctype="multipart/form-data">
+
+    <div class="mb-3">
+      <input class="form-control" type="file" id="formFile" name="file" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Share</button>
+
   </form>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></script>
 </body>
 </html>

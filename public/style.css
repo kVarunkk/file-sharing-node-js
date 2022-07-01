@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    width: 50%;
+    margin: 10% auto;
+}

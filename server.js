@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 //to understand
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 //files will be uploaded in the 'uploads' folder
 const upload = multer({ dest: "uploads" });
